@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スカネモエロ</title>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <style>
+        table.profile{
+            color :darkblue;
+            text-align : center;
+            background : url(background.png);
+            border: 1px solid #333;
+        }
+        td{
+            border: 1px solid #333;
+        }
+        .icon{
+            transform: rotate(0deg);
+        }
+        .pre{
+            color :rgb(0, 72, 139);
+            
+
+        }
+        .suf{
+            color : rgb(0, 11, 71)
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h3><b>第二周作業</b></h3>
+        <a href="./index.html">back</a>
+    </center>
+    <div class="profile-main" >
+        <span>
+            <table id="profile" align = "center" class="profile" width="300px">
+                <tr>
+                    <th colspan="3"><b>profile</th>
+                </tr>
+                <tr>
+                    <td rowspan="3" width="100" height="100">
+                        <img src="icon.png" class="icon" id="icon" width="100" height="100" align="center">
+                    </td>
+                    <td width="50">
+                        <span class="pre"><b>班級</span>
+                    </td>
+                    <td>
+                        <span class="suf">資工二甲</span>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td width="50">
+                        <span class="pre"><b>姓名</span>
+                    </td>
+                    <td>
+                        <span class="suf">賴羿翰</span>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td width="50">
+                        <span class="pre"><b>學號</span>
+                    </td>
+                    <td>
+                        <span class="suf" id="num">1111032045</span>
+                    </td>
+                    <script>
+                        var num = document.getElementById("num");
+                        var ca = 0;
+                        var ta = num.innerText;
+                        nggyuuu = function(){
+                            num.innerText = ta.substring(0,ca+1);
+                            ca = (ca + 1) % 10;
+                            setTimeout(function(){
+                            nggyuuu()
+                            },500);
+                        }
+                        nggyuuu();
+                    </script>
+                </tr>
+            </table>
+        </span>
+        
+        <script>
+            var h = 10;
+            var w = 10;
+            var c = 0;
+            var a = 0;
+            profile = document.getElementById("icon");
+            nggyu = function(){
+                profile.height = h;
+                profile.width = w;
+                profile.style.transform = "rotate("+a+"deg)";
+                h += (Math.sin(c) * 1.75);
+                w += (Math.sin(c) * 1.75);
+                c = (c+0.05);
+                if (c >= 2*Math.pi){
+                    c = 0
+                }
+                a = c**2
+                if (w >= 1000){
+                    w = 100;
+                }
+                setTimeout(function(){ 
+                    nggyu(); 
+                },10);
+            }
+            nggyu();
+        </script>
+   </div>
+</body>
+</html>
