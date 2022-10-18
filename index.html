@@ -10,10 +10,11 @@
 <body>
     <ul>
         <li class="Class" id = "class"> "班級：資工二甲" </li>
-        <li class="Student Number"> "學號：1111032045" </li>
+        <li class="Student Number" id = "num"> "學號：1111032045" </li>
         <li class="Name" id="name">"姓名：賴羿翰"</li>
         <li><b>點<a id="name2">名字</a>可以讓你知道我有完成第二個作業</li>
         <li><b>點<a id="class2">班級</a>可以讓你知道我有完成第三個作業</li>
+        <li><b>點<a id="num2">學號</a>可以讓你知道我有完成第四個作業</li>
     </ul>
     <script>
         document.getElementById("name").onclick = function(){
@@ -27,6 +28,12 @@
         };
         document.getElementById("class2").onclick = function(){
             window.open("./maaaath.html", "_self");
+        };
+        document.getElementById("num").onclick = function(){
+            window.open("./div.html", "_self");
+        };
+        document.getElementById("num2").onclick = function(){
+            window.open("./div.html", "_self");
         };
     </script>
 </body>

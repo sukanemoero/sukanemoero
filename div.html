@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <title>DivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDivDiv</title>
+    <style>
+        div{
+            display: block;
+        	position: relative;
+        	text-align: left;
+        	margin: 2px;
+        }
+        div#box{
+        	width: 800px;
+        	height: 600px;
+        	background-color: white;
+        }
+        div#boxInsideBox{
+        	display: flex;
+        	margin: 0px;
+        }
+        div#header{
+        	background-color: orange;
+        	height: 100px;
+        }
+        div#nav{
+        	background-color: deeppink;
+        	height: 50px;
+        }
+        div#aside{
+        	background-color: pink;
+        	width: 20%;
+        	height: 300px;
+        	float: left;
+        }
+        div#article{
+        	background-color: deepskyblue;
+        	width: 80%;
+        	height: 300px;
+        	float: left;
+        }
+        div#section{
+        	background-color: yellow;
+        	height: 30%;
+        	top: 62%;
+        }
+        div#footer{
+        	background-color: darkseagreen;
+        	height: 100px;
+        	clear: left;
+        }
+
+    </style>
+</head>
+<body style = "align-content: center">
+    <center>
+        <h color = "gray"><b>點任意處回去哈哈</b></h>
+        <div id = "box">
+        <div id = "header" class = "hovver">header</div>
+        <div id = "nav" class = "hovver">nav</div>
+        <div id = "boxInsideBox">
+            <div id = "aside" class = "hovver">aside</div>
+            <div id = "article" class = "hovver">
+                article
+                <div id = "section" class = "hovver">section</div>
+            </div>
+        </div>
+        <div id = "footer" class = "hovver">footer</div>
+    </div>
+    <script>
+        setTimeout(function() {document.onclick = function(){window.open("./index.html", "_self")}},100)
+        
+    </script>
+    <!--
+    <script>
+        var a = document.getElementsByClassName("hovver");
+        var aa = 0,ii = 0;
+        function rotateee(vivi){
+            
+            vivi.style.transform = "rotate("+aa+"deg)";
+            ii = (ii+0.05);
+            if (ii >= 2*Math.pi){
+                ii = 0;
+            }
+            aa = ii**2;
+
+            if (stop != 1){
+                setTimeout(function(){ 
+                    rotateee(); 
+                },10);
+            }
+        }
+        for(var i = 1;i <= a.length;i++){
+            rotateee(a[i-1])
+        }
+    </script>
+    -->
+</center>
+</body>
+</html>
