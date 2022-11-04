@@ -1,40 +1,246 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>スカネモエロ</title>
     <link rel="icon" href="icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./marginReseter.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: rgb(49, 51, 56);
+        }
+
+        #canhover {
+            transition: 500ms;
+            background-color: rgb(33, 33, 33);
+            border: 2px solid rgb(48, 0, 74);
+            border-top: none;
+            border-bottom: none;
+            color: white;
+        }
+
+        #canhover:hover {
+            background-color: rgb(0, 204, 255);
+            border-color: rgb(0, 179, 255);
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
 </head>
+
 <body>
-    <ul>
-        <li class="Class" id = "class"> "班級：資工二甲" </li>
-        <li class="Student Number" id = "num"> "學號：1111032045" </li>
-        <li class="Name" id="name">"姓名：賴羿翰"</li>
-        <li><b>點<a id="name2">名字</a>可以讓你知道我有完成第二個作業</li>
-        <li><b>點<a id="class2">班級</a>可以讓你知道我有完成第三個作業</li>
-        <li><b>點<a id="num2">學號</a>可以讓你知道我有完成第四個作業</li>
-    </ul>
+    <div class="sticky-top container-fluid p-0" style="position: fixed;">
+        <div class="container-fluid"
+            style="background-image: linear-gradient(180deg,rgb(49, 51, 56) 80%,rgba(49, 51, 56, 0.2));padding-bottom:10px">
+            <nav class="navbar navbar-expand-sm navbar-dark p-2 m-0 border-opacity-75 container-fluid"
+                style="background-color: rgb(33, 33, 33);border: 4px solid rgb(48, 0, 74);border-bottom-left-radius: 15px">
+                <img src="./icon.png" alt="haha no image" onclick="icon_()"
+                    style="height: 50px;width: 50px;border-radius: 50%;margin-left: 10px;">
+                <a class="navbar-brand" style="color:white" href="#">ELLLLLLUO</a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation"></button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" aria-current="page">回到最上層 <span
+                                    class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">回到這個頁面的頂部</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+        </div>
+        <div class="container-fluid" style="padding: 0px;">
+
+            <div class="container-fluid d-flex my-0 my-lg-1"
+                style="justify-content: space-between;height:650px;padding:0px;margin:0px;">
+                <aside style="width: 75%;margin-left: 10px;background-color: rgba(100, 100, 100, 0)"></aside>
+                <div id="idididid"
+                    style="background-image: radial-gradient(rgb(0, 0, 0),rgb(40, 40, 41),rgb(49, 51, 56) 30%);width: 25%;height: 100;padding-right: 10px;padding-left: 10px;padding-right: auto;">
+                    <article class=" justify-content-center p-0"
+                        style="height: 650px;border-top-left-radius: 15px;border-bottom-left-radius: 15px;background-color: rgb(33, 33, 33);border: 4px solid rgb(48, 0, 74)">
+
+                        <div class="list-group" style="margin: 15px;">
+                            <h5 style="color: white;">HOMEWORKS</h1><br>
+                                <button id="canhover" type="button" onclick="homework1()"
+                                    class="list-group-item list-group-item-action">FIRST Homework</button>
+                                <button id="canhover" type="button" onclick="homework2()"
+                                    class="list-group-item list-group-item-action">SECOND Homework</button>
+                                <button id="canhover" type="button" onclick="homework3()"
+                                    class="list-group-item list-group-item-action">THIRD Homework</button>
+                                <button id="canhover" type="button" onclick="homework4()"
+                                    class="list-group-item list-group-item-action">FORTH Homework</button>
+                                <button id="canhover" type="button" onclick="homework5()"
+                                    class="list-group-item list-group-item-action">FIFTH Homework</button>
+                        </div>
+
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div style="height: 650px;background-image: linear-gradient(0deg,rgb(49, 51, 56) 85%,rgba(49, 51, 56, 0));">
+        </div>
+    </div>
+    <div id="hahathisisid" class="container-fluid" style="min-height: 650px;">
+        <div class="navbar navbar-expand-sm navbar-dark container-fluid" style="height: 70px;">
+        </div>
+        <div class="row d-flex" style="display: flex;background-color: rgb(49, 51, 56);">
+            <div class="col-8"
+                style="padding-top: 10px; overflow: hidden; word-wrap:break-word; background-color: rgb(49, 51, 56);color:aliceblue">
+                <h1>
+                    由於沒有文案可以寫，我就可以講一些幹話之類的。
+                </h1>
+                <h5>
+                    我是賴羿翰，是個普通的青少年，過著勉強能過的日子。每天早上起來第一件事就是打開電腦，也沒做什麼，只是發呆。幾分過去，鬧鐘叫回了我，也是一如往常的，拿起了課本就出了門。
+                </h5>
+                <h5>
+                    "日復一日的，實在些累人"，每天校想著出門可能就會有咬著吐司的閃耀女高中生撞到我之類的，又或許突然有個少女突然搭訕我說他是我的義妹，實在是"笑想"沒錯，甚至開始懷疑自己的精神狀況，但也沒辦法，如此枯燥，感覺只有這樣才能在人生增添一些色彩吧？
+                </h5>
+                <h5>
+                    早八的，第一節又是該死的理科，這不搞死我才怪吧？哀，還是得上...
+                </h5>
+                <h5>
+                    但我是會在課本上畫畫的，而我畫畫的原則是：「幹你娘塞爆」
+                </h5>
+                <h5>
+                    沒錯，就是幹你娘塞爆，老子才不管甚麼課本畫爛三小的，每次畫的就是整本課本。課本畫成繪本，繪本畫成抽象藝術。一直畫爆，跟把整個美術館的藝術品全塞在課本沒兩樣。
+                    <h5>
+                        我還記得，我那個月上課25天，老師跑來跟我說，最近發現你習作少幾頁，你有頭緒嗎？
+                    </h5>
+                    <h5>
+                        我他媽的怎麼會知道。
+                    </h5>
+                    <h5>
+                        但這天，同學看到了我的課本
+                    </h5>
+                    <h5>
+                        「啊，好像棋盤似的」
+                    </h5>
+                    <h5>
+                        我不禁說到
+                    </h5>
+                    <h5>
+                        「我看倒有點像稿紙」
+                    </h5>
+                    <h5>
+                        被吵醒的同學從課桌翻開棉被的說到
+                    </h5>
+                    <h5>
+                        「真像一塊塊的綠豆糕」
+                    </h5>
+                    <h5>
+                        我的另一個室友
+                    </h5>
+                    <h5>
+                        外號【大食客】的同學站在教室門口看著我們倆說到
+                    </h5>
+                    <h5>
+                        我們不禁哄堂大笑，同樣的一件內褲
+                    </h5>
+                    <h5>
+                        每個人卻有不同的感覺
+                    </h5>
+                    <h5>
+
+                        然而這時，我的課本突然散了開來，化成了一片片紙屑飄向四方
+                    </h5>
+                    <h5>
+                        我才發現
+                    </h5>
+                    <h5>
+                        這哪是什麼課本
+                    </h5>
+                    <h5>
+                        而是一張張的，白色的，補發很多次的TYSH學生證
+                    </h5>
+                    <h5>
+                        我才想起，原來我是是國立台中科技大學的學生，所以才有這麼高級的雅量。
+                    </h5>
+                    <h5>
+                        國立台中科技大學是一所積極新創、學科齊全、學術實力雄厚、辦學特色鮮明，在國際上具有重要影響力與競爭力的普通高中，在多個學術領域具有非常前瞻的科技實力，擁有世界一流的實驗室與師資力量，各種排名均位於全區前列。歡迎大家報考國立台中科技大學。
+                    </h5>
+                    <h5>
+                        這時候就有人問了，在學校安全嗎？這我都考慮到了
+                    </h5>
+                    <h5>
+                        沒錯，我有Surfshark VPN，沒有錯 Surfshark VPN
+                    </h5>
+                    <h5>
+                        VPN，也就是虛擬私人網路，主要功能是將你的網際網路連線加密，保護隱私。更重要的是，你也可以透過VPN解鎖許多原本受區限制的娛樂平台內容。而Surfshark VPN更是有一些特別亮眼之處:
+                    </h5>
+                    <h5>
+                        首先，不管是Windows, Mac, Android, iOS,智慧電視, Chrome, Xbox, PlayStation等等，幾乎所有平台的應用程式，Surfshark
+                        VPN都適用，而Surfshark VPN更是能夠讓你只辦理一個訂閱帳號，就可以無限在所有裝置上，同步使用。
+                    </h5>
+                    <h5>
+                        當然，Surfshark VPN會防止你的IP和DNS外洩，保護你連線的位置，更嚴格堅持無日誌原則，絕對不會保留你的網路資料。
+                    </h5>
+                    <h5>
+                        還在猶豫嗎?我這裡有個超優惠給你，輸入我的折扣碼NeverGonnaGiveYouUp。
+                    </h5>
+                    <h5>
+                        就可以獲得17折的優惠和3個月的免費試用。
+                    </h5>
+                    <h5>
+                        有了Surfshark VPN, 再也不會錯過任何一次影集首播，安心追劇再也不是問題
+                    </h5>
+            </div>
+            <div class="col-4"></div>
+            <div class="footer container-fluid " style="height:300px"></div>
+        </div>
+    </div>
     <script>
-        document.getElementById("name").onclick = function(){
-            window.open("./profile.html", "_self");
-        };
-        document.getElementById("name2").onclick = function(){
-            window.open("./profile.html", "_self");
-        };
-        document.getElementById("class").onclick = function(){
-            window.open("./maaaath.html", "_self");
-        };
-        document.getElementById("class2").onclick = function(){
-            window.open("./maaaath.html", "_self");
-        };
-        document.getElementById("num").onclick = function(){
-            window.open("./div.html", "_self");
-        };
-        document.getElementById("num2").onclick = function(){
-            window.open("./div.html", "_self");
-        };
+        homework1 = function () {
+            window.open("./", "_self")
+        }
+        homework2 = function () {
+            window.open("./profile.html", "_self")
+        }
+        homework3 = function () {
+            window.open("./maaaath.html", "_self")
+        }
+        homework4 = function () {
+            window.open("./div.html", "_self")
+        }
+        homework5 = function () {
+            eventcontent = document.getElementById("hahathisisid")
+            event_ = document.getElementById("idididid")
+            event_.style.display = "none"
+            eventcontent.innerHTML = '<iframe width="1280" height="720" src="https://www.youtube.com/embed/ECkxzFgbJqQ?list=LL" title="宵の余、良い！/ 百鬼あやめ original" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+
+        }
+        icon_ = function () {
+            window.open("./", "_self")
+        }
     </script>
 </body>
+
 </html>
