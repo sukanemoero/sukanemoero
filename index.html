@@ -13,12 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-        crossorigin="anonymous"></script>
+
     <style>
         body {
             background-color: rgb(49, 51, 56);
@@ -52,6 +47,7 @@
 </head>
 
 <body>
+    bs5-nav
     <div class="sticky-top container-fluid p-0" style="position: fixed;">
         <div class="container-fluid"
             style="background-image: linear-gradient(180deg,rgb(49, 51, 56) 80%,rgba(49, 51, 56, 0.2));padding-bottom:10px">
@@ -60,10 +56,11 @@
                 <img src="./icon.png" alt="haha no image" onclick="icon_()"
                     style="height: 50px;width: 50px;border-radius: 50%;margin-left: 10px;">
                 <a class="navbar-brand" style="color:white" href="#">ELLLLLLUO</a>
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation"></button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" href="#" aria-current="page">回到最上層 <span
@@ -89,18 +86,62 @@
                         style="height: 650px;border-top-left-radius: 15px;border-bottom-left-radius: 15px;background-color: rgb(33, 33, 33);border: 4px solid rgb(48, 0, 74)">
 
                         <div class="list-group" style="margin: 15px;">
-                            <h5 style="color: white;">HOMEWORKS</h1><br>
-                                <button id="canhover" type="button" onclick="homework1()"
-                                    class="list-group-item list-group-item-action">FIRST Homework</button>
-                                <button id="canhover" type="button" onclick="homework2()"
-                                    class="list-group-item list-group-item-action">SECOND Homework</button>
-                                <button id="canhover" type="button" onclick="homework3()"
-                                    class="list-group-item list-group-item-action">THIRD Homework</button>
-                                <button id="canhover" type="button" onclick="homework4()"
-                                    class="list-group-item list-group-item-action">FORTH Homework</button>
-                                <button id="canhover" type="button" onclick="homework5()"
-                                    class="list-group-item list-group-item-action">FIFTH Homework</button>
-                        </div>
+                                <div class="d-none d-xl-block">
+                                    <h5 style="color: white;">Reports On Coding Course</h5>
+                                    <button id="canhover" type="button" onclick="homework1()"
+                                        class="list-group-item list-group-item-action">The First Report</button>
+                                    <button id="canhover" type="button" onclick="homework2()"
+                                        class="list-group-item list-group-item-action">The Second Report</button>
+                                    <button id="canhover" type="button" onclick="homework3()"
+                                        class="list-group-item list-group-item-action">The Third Report</button>
+                                    <button id="canhover" type="button" onclick="homework4()"
+                                        class="list-group-item list-group-item-action">The Forth Report</button>
+                                    <button id="canhover" type="button" onclick="homework5()"
+                                        class="list-group-item list-group-item-action">The Fifth Report</button>
+                                </div>
+                                <div class="d-none d-lg-block d-xl-none">
+                                    <h5 style="color: white;">The All Reports</h5>
+                                    <button id="canhover" type="button" onclick="homework1()"
+                                        class="list-group-item list-group-item-action">The 1st Report</button>
+                                    <button id="canhover" type="button" onclick="homework2()"
+                                        class="list-group-item list-group-item-action">The 2nd Report</button>
+                                    <button id="canhover" type="button" onclick="homework3()"
+                                        class="list-group-item list-group-item-action">The 3rd Report</button>
+                                    <button id="canhover" type="button" onclick="homework4()"
+                                        class="list-group-item list-group-item-action">The 4th Report</button>
+                                    <button id="canhover" type="button" onclick="homework5()"
+                                        class="list-group-item list-group-item-action">The 5th Report</button>
+                                </div>
+                                <div class="d-none d-md-block d-lg-none">
+                                    <h5 style="color: white;">HOMEWORKS</h5>
+                                    <button id="canhover" type="button" onclick="homework1()"
+                                        class="list-group-item list-group-item-action">FIRST</button>
+                                    <button id="canhover" type="button" onclick="homework2()"
+                                        class="list-group-item list-group-item-action">SECOND</button>
+                                    <button id="canhover" type="button" onclick="homework3()"
+                                        class="list-group-item list-group-item-action">THIRD</button>
+                                    <button id="canhover" type="button" onclick="homework4()"
+                                        class="list-group-item list-group-item-action">FORTH</button>
+                                    <button id="canhover" type="button" onclick="homework5()"
+                                        class="list-group-item list-group-item-action">FIFTH</button>
+                                </div>
+                                <div class="d-none d-sm-block d-md-none">
+                                    <h5 style="color: white;">HW</h1>
+                                    <button id="canhover" type="button" onclick="homework1()"
+                                        class="list-group-item list-group-item-action">1st</button>
+                                    <button id="canhover" type="button" onclick="homework2()"
+                                        class="list-group-item list-group-item-action">2nd</button>
+                                    <button id="canhover" type="button" onclick="homework3()"
+                                        class="list-group-item list-group-item-action">3rd</button>
+                                    <button id="canhover" type="button" onclick="homework4()"
+                                        class="list-group-item list-group-item-action">4th</button>
+                                    <button id="canhover" type="button" onclick="homework5()"
+                                        class="list-group-item list-group-item-action">5th</button>
+                                </div>
+                                <div class="d-block d-sm-none m-auto">
+                                    <h5 style="color: white;">?</h1>
+                                </div>
+                            </div>
 
                     </article>
                 </div>
@@ -132,86 +173,85 @@
                 </h5>
                 <h5>
                     沒錯，就是幹你娘塞爆，老子才不管甚麼課本畫爛三小的，每次畫的就是整本課本。課本畫成繪本，繪本畫成抽象藝術。一直畫爆，跟把整個美術館的藝術品全塞在課本沒兩樣。
-                    <h5>
-                        我還記得，我那個月上課25天，老師跑來跟我說，最近發現你習作少幾頁，你有頭緒嗎？
-                    </h5>
-                    <h5>
-                        我他媽的怎麼會知道。
-                    </h5>
-                    <h5>
-                        但這天，同學看到了我的課本
-                    </h5>
-                    <h5>
-                        「啊，好像棋盤似的」
-                    </h5>
-                    <h5>
-                        我不禁說到
-                    </h5>
-                    <h5>
-                        「我看倒有點像稿紙」
-                    </h5>
-                    <h5>
-                        被吵醒的同學從課桌翻開棉被的說到
-                    </h5>
-                    <h5>
-                        「真像一塊塊的綠豆糕」
-                    </h5>
-                    <h5>
-                        我的另一個室友
-                    </h5>
-                    <h5>
-                        外號【大食客】的同學站在教室門口看著我們倆說到
-                    </h5>
-                    <h5>
-                        我們不禁哄堂大笑，同樣的一件內褲
-                    </h5>
-                    <h5>
-                        每個人卻有不同的感覺
-                    </h5>
-                    <h5>
-
-                        然而這時，我的課本突然散了開來，化成了一片片紙屑飄向四方
-                    </h5>
-                    <h5>
-                        我才發現
-                    </h5>
-                    <h5>
-                        這哪是什麼課本
-                    </h5>
-                    <h5>
-                        而是一張張的，白色的，補發很多次的TYSH學生證
-                    </h5>
-                    <h5>
-                        我才想起，原來我是是國立台中科技大學的學生，所以才有這麼高級的雅量。
-                    </h5>
-                    <h5>
-                        國立台中科技大學是一所積極新創、學科齊全、學術實力雄厚、辦學特色鮮明，在國際上具有重要影響力與競爭力的普通高中，在多個學術領域具有非常前瞻的科技實力，擁有世界一流的實驗室與師資力量，各種排名均位於全區前列。歡迎大家報考國立台中科技大學。
-                    </h5>
-                    <h5>
-                        這時候就有人問了，在學校安全嗎？這我都考慮到了
-                    </h5>
-                    <h5>
-                        沒錯，我有Surfshark VPN，沒有錯 Surfshark VPN
-                    </h5>
-                    <h5>
-                        VPN，也就是虛擬私人網路，主要功能是將你的網際網路連線加密，保護隱私。更重要的是，你也可以透過VPN解鎖許多原本受區限制的娛樂平台內容。而Surfshark VPN更是有一些特別亮眼之處:
-                    </h5>
-                    <h5>
-                        首先，不管是Windows, Mac, Android, iOS,智慧電視, Chrome, Xbox, PlayStation等等，幾乎所有平台的應用程式，Surfshark
-                        VPN都適用，而Surfshark VPN更是能夠讓你只辦理一個訂閱帳號，就可以無限在所有裝置上，同步使用。
-                    </h5>
-                    <h5>
-                        當然，Surfshark VPN會防止你的IP和DNS外洩，保護你連線的位置，更嚴格堅持無日誌原則，絕對不會保留你的網路資料。
-                    </h5>
-                    <h5>
-                        還在猶豫嗎?我這裡有個超優惠給你，輸入我的折扣碼NeverGonnaGiveYouUp。
-                    </h5>
-                    <h5>
-                        就可以獲得17折的優惠和3個月的免費試用。
-                    </h5>
-                    <h5>
-                        有了Surfshark VPN, 再也不會錯過任何一次影集首播，安心追劇再也不是問題
-                    </h5>
+                <h5>
+                    我還記得，我那個月上課25天，老師跑來跟我說，最近發現你習作少幾頁，你有頭緒嗎？
+                </h5>
+                <h5>
+                    我他媽的怎麼會知道。
+                </h5>
+                <h5>
+                    但這天，同學看到了我的課本
+                </h5>
+                <h5>
+                    「啊，好像棋盤似的」
+                </h5>
+                <h5>
+                    我不禁說到
+                </h5>
+                <h5>
+                    「我看倒有點像稿紙」
+                </h5>
+                <h5>
+                    被吵醒的同學從課桌翻開棉被的說到
+                </h5>
+                <h5>
+                    「真像一塊塊的綠豆糕」
+                </h5>
+                <h5>
+                    我的另一個室友
+                </h5>
+                <h5>
+                    外號【大食客】的同學站在教室門口看著我們倆說到
+                </h5>
+                <h5>
+                    我們不禁哄堂大笑，同樣的一件內褲
+                </h5>
+                <h5>
+                    每個人卻有不同的感覺
+                </h5>
+                <h5>
+                    然而這時，我的課本突然散了開來，化成了一片片紙屑飄向四方
+                </h5>
+                <h5>
+                    我才發現
+                </h5>
+                <h5>
+                    這哪是什麼課本
+                </h5>
+                <h5>
+                    而是一張張的，白色的，補發很多次的TYSH學生證
+                </h5>
+                <h5>
+                    我才想起，原來我是是國立台中科技大學的學生，所以才有這麼高級的雅量。
+                </h5>
+                <h5>
+                    國立台中科技大學是一所積極新創、學科齊全、學術實力雄厚、辦學特色鮮明，在國際上具有重要影響力與競爭力的普通高中，在多個學術領域具有非常前瞻的科技實力，擁有世界一流的實驗室與師資力量，各種排名均位於全區前列。歡迎大家報考國立台中科技大學。
+                </h5>
+                <h5>
+                    這時候就有人問了，在學校安全嗎？這我都考慮到了
+                </h5>
+                <h5>
+                    沒錯，我有Surfshark VPN，沒有錯 Surfshark VPN
+                </h5>
+                <h5>
+                    VPN，也就是虛擬私人網路，主要功能是將你的網際網路連線加密，保護隱私。更重要的是，你也可以透過VPN解鎖許多原本受區限制的娛樂平台內容。而Surfshark VPN更是有一些特別亮眼之處:
+                </h5>
+                <h5>
+                    首先，不管是Windows, Mac, Android, iOS,智慧電視, Chrome, Xbox, PlayStation等等，幾乎所有平台的應用程式，Surfshark
+                    VPN都適用，而Surfshark VPN更是能夠讓你只辦理一個訂閱帳號，就可以無限在所有裝置上，同步使用。
+                </h5>
+                <h5>
+                    當然，Surfshark VPN會防止你的IP和DNS外洩，保護你連線的位置，更嚴格堅持無日誌原則，絕對不會保留你的網路資料。
+                </h5>
+                <h5>
+                    還在猶豫嗎?我這裡有個超優惠給你，輸入我的折扣碼NeverGonnaGiveYouUp。
+                </h5>
+                <h5>
+                    就可以獲得17折的優惠和3個月的免費試用。
+                </h5>
+                <h5>
+                    有了Surfshark VPN, 再也不會錯過任何一次影集首播，安心追劇再也不是問題
+                </h5>
             </div>
             <div class="col-4"></div>
             <div class="footer container-fluid " style="height:300px"></div>
@@ -235,7 +275,6 @@
             event_ = document.getElementById("idididid")
             event_.style.display = "none"
             eventcontent.innerHTML = '<iframe width="1280" height="720" src="https://www.youtube.com/embed/TM93ntGYLGg?autoplay=1" title="【BOF:ET】😲🙌👾🤖🤸👺🌠🤲👻🖐️🛸😀 ／ 立秋feat.ちょこ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen allow="autoplay"></iframe>'
-
         }
         icon_ = function () {
             window.open("./", "_self")
