@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <title>nine-nine city hair table sencend</title>
+    <style>
+        *{
+            margin: 1px;
+            padding: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <b>
+        <center>
+            <button onclick="window.open('./index.html', '_self');">哈哈點我回去</button>
+            <br>
+            <div class = "yah">
+                <table id = "tab" style="border-collapse : collapse">
+                    
+                </table>
+            </div>
+        <script>
+            var table = document.getElementById("tab")
+            var amount = 9
+            var fir = 1
+            var sec = 1
+            var ans = 1
+            var index = []
+            var value = []
+            for(count = 1;count <= amount;count++){
+                for(count_ = 1;count_ <= amount;count_++){
+                    value.push([count,count_,count_*count])
+                }
+                index.push(value)
+                value = []
+            }
+            var span = ["<span style='width:20px;display: inline-block'>","","</span>"]
+            var spann = ["<span style='display: block'>","","<span style='width:20px;display: inline-block'>*</span>","","<span style='width:20px;display: inline-block'>=</span>","","</span>"]
+            var tr = ["<tr>","","</tr>"]
+            var td = ["<td style='border: 1px solid black'>","","</td>"]
+            var table_ = ""
+            var c = 0
+            var tr_ = tr.concat()
+            for(count = 0;count < index.length; count++){
+                var td_ = td.concat()
+                for(count_ = 0;count_ < index.length;count_++){
+                    spann_ = spann.concat()
+                    spann_[1] = span[0] + index[count][count_][0].toString() + span[2]
+                    spann_[3] = span[0] + index[count][count_][1].toString() + span[2]
+                    spann_[5] = span[0] + index[count][count_][2].toString() + span[2]
+                    td_[1] = td_[1] + spann_[0] + spann_[1] + spann_[2] + spann_[3] + spann_[4] + spann_[5] + spann_[6]
+                }
+                tr_[1] = tr_[1] + td_[0] + td_[1] + td_[2]
+                c += 1
+                if(c % 3 == 0){
+                    c = 0
+                    table_ = table_ + tr_[0] + tr_[1] + tr_[2]
+                    var tr_ = tr.concat()
+                }
+            }
+            table.innerHTML = "<th colspan='3' style='background-color: black; color: white'><b>九九乘法表</b></th>" + table_
+        </script>
+
+        </center>
+        </b>
+    </body>
+    </html>
