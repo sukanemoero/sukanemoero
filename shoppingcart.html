@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="" crossorigin=""></script>
+    <title>shopping cart</title>
+    <style>
+        .inp{
+            border-width:0px;
+            border:none;
+            outline:none;
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <div class="container">
+            <a class="navbar-brand haha" href="#">Navbar</a>
+            <button class="navbar-toggler d-lg-none " type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active haha" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link haha" href="#">Link</a>
+                    </li>
+
+                </ul>
+
+            </div>
+      </div>
+    </nav>
+    <div class="container px-auto mt-1">
+    <div class="container px-auto mb-1">
+    <div class="dropdown open mx-3 d-inline">
+        <button id="itemlist" class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                    請選擇商品
+                </button>
+        <div class="dropdown-menu" aria-labelledby="triggerId">
+            <button class="dropdown-item item" id="1" href="#"><b>台大學歷</b></button>
+            <button class="dropdown-item item" id="2" href="#"><b>我是商品</b></button>
+            <button class="dropdown-item item" id="3" href="#"><b>老師的青睞</b></button>
+            <button class="dropdown-item item" id="4" href="#"><b>女裝照片</b></button>
+            <button class="dropdown-item item" id="5" href="#"><b>コハル</b></button>
+        </div>
+    </div>
+    <div class="d-inline mx-3">
+    <span>count: </span>
+    
+    <input type="range" min="1" max="10" step="1" class="inp mx-3" id="count" value="1" oninput="countupdate()">
+    <span id="countdp"></span>
+    </div>
+    <div class="d-inline mx-3">
+        <b><span id="price"></span></b>
+    </div>
+    <button type="button" id="send" class="btn btn-primary" style="display: none"></button>
+    <script>
+        item = [...document.getElementsByClassName("item")];
+        itemlist = document.getElementById("itemlist");
+        pricedp = document.getElementById("price")
+        butt = document.getElementById("send")
+        price = [100000,297345,150,1450,200000000];
+        chooseItem = []
+        for(i in item){
+
+            item[i].onclick = function(self){
+                itemid = this.id
+                updatePrice(Number(itemid))
+                itemlist.innerHTML = this.innerHTML
+                countupdate()
+            }
+        }
+        function updatePrice(itempr){
+            var p = price[itempr-1]
+            var c = itemcount
+            if(c * p > 0){
+                endprice = Number(c) * p * 1.12
+                pricedp.innerHTML = `${p} * ${c} + 12% = ${endprice.toFixed(2)}(含稅)`
+                butt.style.display = "inline"
+                if(endprice > 1000000000){
+                    var dp = `NTD ${(endprice / 1000000000).toFixed(2)}B`
+                }
+                else if (endprice > 1000000){
+                    var dp = `NTD ${(endprice / 1000000).toFixed(2)}M`
+                }
+                else if (endprice > 1000){
+                    var dp = `NTD ${(endprice / 1000).toFixed(2)}K`
+                }
+                else{
+                    var dp = `NTD ${endprice.toFixed(2)}`
+                }
+                butt.innerHTML = dp
+            }
+            else{
+                pricedp.innerHTML = ""
+                butt.style.display = "none"
+            }
+        }
+        butt.onclick = function(){
+            chooseItem.push([Number(itemid),price[Number(itemid)-1],itemcount,endprice])
+            itemdpupdate()
+            delete itemid,itemcount
+            itemlist.innerHTML = "請選擇商品"
+            countdp.style.display = "inline"
+            count.type = "range"
+            count.max = "10"
+            count.value = "1"
+            pricedp.innerHTML = ""
+            butt.style.display = "none"
+            countdp.innerHTML = count.value
+            countupdate()
+        }
+    </script>
+    <script>
+        count = document.getElementById("count");
+        countdp = document.getElementById("countdp");
+        countupdate()
+        function countupdate(){
+            
+            if(count.value > 100){
+                count.value = 100
+            }
+            else if(count.value <= 0){
+                count.value = 1
+            }
+            else if(count.value < 10){
+                countdp.innerHTML = count.value
+            }
+            else{
+                count.type = "number"
+                count.max = "100"
+                countdp.style.display = "none"
+            } 
+            itemcount = Number(count.value).toFixed(0)
+            updatePrice(Number(itemid))
+            
+        }
+    </script>
+</div>
+</div>
+<div class="container mx-auto my-5">
+    <table class="container-fluid">
+        <tbody id="itemdisplay" >
+        </tbody>
+    </table>
+    <div id="final" style="text-align: end;">
+
+    </div>
+    <script>
+        itemdisplay = document.getElementById("itemdisplay");
+        final = document.getElementById("final");
+        
+        itemname = ["<b>台大學歷</b>",
+                    "<b>我是商品</b>",
+                    "<b>老師的青睞</b>",
+                    "<b>女裝照片</b>",
+                    "<b>コハル</b>"]
+        function itemdpupdate(){
+            var temp = ""
+            finaln = 0
+            for(i in chooseItem){
+                temp += '<tr><td class="p-auto">' + '<button type="button" class="cl" id="'+i+'" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>' + '</td><td class="p-auto">'
+                temp += (Number(i)+1).toString() + '</td>' + '<td class="p-auto">'
+                temp += itemname[chooseItem[i][0]-1] + '</td>' + '<td class="p-auto" style="text-align: end;border: 4px solid black;">'
+                temp += chooseItem[i][2] + '</td>' + '<td class="p-auto" style="text-align: end;border: 4px solid black;">'
+                temp += Number(chooseItem[i][3]).toFixed(2) + '</td>' + '</tr>'
+                finaln += Number(chooseItem[i][3])
+            }
+            
+            itemdisplay.innerHTML = '<tr><td class="p-auto" >刪除</td><td class="p-auto" >編號</td><td class="p-auto">商品</td><td class="p-auto" style="border: 4px solid black;">數量</td><td class="p-auto" style="border: 4px solid black;">小記</td></tr>' + temp
+            if(temp.length<=0){
+                itemdisplay.innerHTML = ""
+            }
+            tempp = [...document.getElementsByClassName("cl")]
+            final.innerHTML = "最終金額：NTD " + (finaln.toFixed(2)).toString()
+            if(finaln == 0){final.innerHTML = ""}
+            for(i in tempp){
+                
+                tempp[i].onclick = function(){
+                    delete chooseItem[this.id]
+
+                    itemdpupdate()
+            }
+            
+        }
+        }
+    </script>
+</div>
+</body>
+</html>
+<!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
