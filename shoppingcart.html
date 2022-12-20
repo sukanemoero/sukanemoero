@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./shoppingcartcss.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="" crossorigin=""></script>
@@ -16,7 +17,11 @@
             outline:none;
             text-align: center;
         }
-
+        dialog{
+            border: none;
+            box-shadow: 0 2px 6px #ccc;
+            border-radius: 10px;
+        }
         
     </style>
 </head>
@@ -173,33 +178,68 @@
             var temp = ""
             finaln = 0
             for(i in chooseItem){
-                temp += '<tr><td class="p-auto">' + '<button type="button" class="cl" id="'+i+'" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>' + '</td><td class="p-auto">'
+                temp += '<tr><td class="p-auto cl">' + '<button type="button" id="'+i+'" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>' + '</td><td class="p-auto">'
                 temp += (Number(i)+1).toString() + '</td>' + '<td class="p-auto">'
                 temp += itemname[chooseItem[i][0]-1] + '</td>' + '<td class="p-auto" style="text-align: end;border: 4px solid black;">'
                 temp += chooseItem[i][2] + '</td>' + '<td class="p-auto" style="text-align: end;border: 4px solid black;">'
                 temp += Number(chooseItem[i][3]).toFixed(2) + '</td>' + '</tr>'
                 finaln += Number(chooseItem[i][3])
+                document.getElementById("senderr").style.display="block"
             }
             
             itemdisplay.innerHTML = '<tr><td class="p-auto" >刪除</td><td class="p-auto" >編號</td><td class="p-auto">商品</td><td class="p-auto" style="border: 4px solid black;">數量</td><td class="p-auto" style="border: 4px solid black;">小記</td></tr>' + temp
             if(temp.length<=0){
                 itemdisplay.innerHTML = ""
+                document.getElementById("senderr").style.display="none"
             }
-            tempp = [...document.getElementsByClassName("cl")]
+            tempp = [...document.querySelectorAll("td.cl button")]
             final.innerHTML = "最終金額：NTD " + (finaln.toFixed(2)).toString()
             if(finaln == 0){final.innerHTML = ""}
             for(i in tempp){
                 
                 tempp[i].onclick = function(){
                     delete chooseItem[this.id]
-
+                    document.getElementById("dia").style.display="block"
                     itemdpupdate()
             }
             
         }
         }
     </script>
+<button type="button" class="btn btn-primary btn-lg float-end" id="senderr" style="display: none;" data-bs-toggle="modal" data-bs-target="#modalId">
+    確認送出訂單
+</button>
+
 </div>
+<!--            test            -->
+<!-- Modal trigger button -->
+
+<!-- Modal Body -->
+<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">確認</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="finalcheck">
+                確認商品無誤後，請點選送出
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">返回</button>
+                <button type="button" onclick="window.open('./haha404.html','_self')" class="btn btn-primary">送出</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Optional: Place to the bottom of scripts -->
+<script>
+    const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+
+</script>
 </body>
 </html>
 <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
